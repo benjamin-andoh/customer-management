@@ -9,6 +9,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User, Group
 
+
 @unauthenticated_user
 def registrationPage(request):
     form = CreateUserForm()
@@ -26,7 +27,7 @@ def registrationPage(request):
 
             # customer giving a user
             Customer.objects.create(
-                 user=user
+                user=user
             )
 
             # do not have to pass it to the template, it temporally stored as a value
